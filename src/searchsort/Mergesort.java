@@ -1,4 +1,4 @@
-package SearchSort;
+package searchsort;
 
 public class Mergesort {
     public static void merge(int[] arr, int left, int mid, int right) {

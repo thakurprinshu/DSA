@@ -1,4 +1,4 @@
-package SearchSort;
+package searchsort;
 
 public class Selectionsort {
     public static void selsort(int[] arr){

@@ -1,4 +1,4 @@
-package SearchSort;
+package searchsort;
 
 public class Insertionsort {
     public static void insertsort(int[] arr){

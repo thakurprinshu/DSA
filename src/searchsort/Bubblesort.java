@@ -1,4 +1,4 @@
-package SearchSort;
+package searchsort;
 
 public class Bubblesort {
     public static void sort(int[] arr) {

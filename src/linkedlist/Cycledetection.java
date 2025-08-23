@@ -3,8 +3,8 @@ package linkedlist;
 class Node {
     int data;
     Node next;
-    Node(int val) {
-        this.data = val;
+    Node(int data) {
+        this.data = data;
         this.next = null;
     }
 }

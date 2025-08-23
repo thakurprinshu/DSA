@@ -1,11 +1,6 @@
- class Node{
-    int data;
-    Node next;
-    Node(int val){
-        this.data=val;
-        this.next=null;
-    }
- }
+package linkedlist;
+
+
  public class Reverselist{
     public static Node reverse(Node head){
         Node prev = null;

@@ -1,12 +1,12 @@
 package stack;
 
-import java.util.*;
+import java.util.Arrays;
 
 public class NextGreaterElement {
     public static int[] findnge(int[] arr) {
         int n = arr.length;
         int[] result = new int[n];
-        Stack<Integer> stack = new Stack<>();
+        Mystack stack = new Mystack(n);
         for (int i = n - 1; i >= 0; i--) {
             while (!stack.isEmpty() && stack.peek() <= arr[i]) {
                 stack.pop();

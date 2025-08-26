@@ -26,7 +26,20 @@ public class Main {
         cq.enqueue(60);
         cq.enqueue(70);
         System.out.println("Front element: " + cq.peek());
+//Implement queue using stacks
 
+                QueueImplement p = new QueueImplement(10);
+
+                p.enqueue(1);
+                p.enqueue(2);
+                p.enqueue(3);
+
+                System.out.println(p.dequeue()); // 1
+                System.out.println(p.dequeue()); // 2
+                System.out.println(p.dequeue()); // 3
+                System.out.println(p.dequeue()); // Queue empty -> -1
+            }
+        }
 
     }
 }

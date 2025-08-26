@@ -1,17 +1,16 @@
 package stack;
-
-import java.util.Stack;
-
 public class EvalPostfix {
     public static int evalPostfix(String expr) {
-        Stack<Integer> stack = new Stack<>();
         String[] tokens = expr.split(" ");
+        MyStack stack = new MyStack(tokens.length);
+
         for (String token : tokens) {
-            if (token.matches("\\d+")) {
+            if (token.matches("\\d+")) {   // number
                 stack.push(Integer.parseInt(token));
-            } else {
+            } else {                       // operator
                 int b = stack.pop();
                 int a = stack.pop();
+
                 switch (token) {
                     case "+" -> stack.push(a + b);
                     case "-" -> stack.push(a - b);

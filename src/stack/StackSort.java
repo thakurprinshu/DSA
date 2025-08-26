@@ -1,10 +1,9 @@
 package stack;
 
-import java.util.Stack;
-
 public class StackSort {
-    public static void sortStack(Stack<Integer> stack) {
-        Stack<Integer> temp = new Stack<>();
+    public static void sortStack(Mystack stack) {
+        Mystack temp = new Mystack(stack.size());
+
         while (!stack.isEmpty()) {
             int curr = stack.pop();
             while (!temp.isEmpty() && temp.peek() > curr) {
@@ -18,14 +17,18 @@ public class StackSort {
     }
 
     public static void main(String[] args) {
-        Stack<Integer> stack = new Stack<>();
+        Mystack stack = new Mystack(10);
         stack.push(3);
         stack.push(5);
         stack.push(1);
         stack.push(4);
-        System.out.println("Original Stack: " + stack);
+
+        System.out.print("Original Stack: ");
+        stack.printStack();
+
         sortStack(stack);
-        System.out.println("Sorted Stack: " + stack);
+
+        System.out.print("Sorted Stack: ");
+        stack.printStack();
     }
 }
-

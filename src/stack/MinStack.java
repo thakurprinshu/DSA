@@ -1,14 +1,14 @@
 package stack;
 
-import java.util.Stack;
-
 class MinStack {
-    private Stack<Integer> mainStack;
-    private Stack<Integer> minStack;
+    private Mystack mainStack;
+    private Mystack minStack;
+    private int capacity;
 
-    public MinStack() {
-        mainStack = new Stack<>();
-        minStack = new Stack<>();
+    public MinStack(int capacity) {
+        this.capacity = capacity;
+        mainStack = new Mystack(capacity);
+        minStack = new Mystack(capacity);
     }
 
     public void push(int val) {
@@ -19,9 +19,12 @@ class MinStack {
     }
 
     public void pop() {
-        if (mainStack.isEmpty()) return;
+        if (mainStack.isEmpty()) {
+            System.out.println("Stack is empty, cannot pop.");
+            return;
+        }
         int removed = mainStack.pop();
-        if (removed == minStack.peek()) {
+        if (!minStack.isEmpty() && removed == minStack.peek()) {
             minStack.pop();
         }
     }
@@ -33,5 +36,10 @@ class MinStack {
     public int getMin() {
         return minStack.peek();
     }
+
+    public boolean isEmpty() {
+        return mainStack.isEmpty();
+    }
 }
+
 
